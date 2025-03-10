@@ -1,0 +1,18 @@
+{
+  "newUser": {
+    "username": "edward124",
+    "password": "password123"
+  },
+  "existingUser": {
+    "username": "edward124",
+    "password": "password123"
+  },
+  "validUser": {
+    "username": "edward1998",
+    "password": "edward1998"
+  },
+  "invalidUser": {
+    "username": "edward1244",
+    "password": "password1233"
+  }
+}

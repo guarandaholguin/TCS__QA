@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-03-10T08:21:33.001Z",
+    "end": "2025-03-10T08:21:38.601Z",
+    "duration": 5600,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c9f724cd-073b-4561-94e6-25ac49291bef",
+      "title": "",
+      "fullFile": "cypress/e2e/api/login.cy.js",
+      "file": "cypress/e2e/api/login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5893a6ea-e80d-4961-a8d2-1f0162ae10b4",
+          "title": "Login Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should login successfully with correct username and password",
+              "fullTitle": "Login Tests Should login successfully with correct username and password",
+              "timedOut": null,
+              "duration": 3188,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"users\").then(users => {\n  const validUser = users.validUser;\n  console.log(validUser);\n  cy.get('#loginusername').clear().type(validUser.username);\n  cy.get('#loginpassword').clear().type(validUser.password);\n  cy.get('[onclick=\"logIn()\"]').click();\n  cy.get('#nameofuser', {\n    timeout: 10000\n  }).should('be.visible').and('contain', `Welcome ${validUser.username}`);\n});",
+              "err": {},
+              "uuid": "89b2bfb5-5a92-46f9-bb44-5e7d88d2574c",
+              "parentUUID": "5893a6ea-e80d-4961-a8d2-1f0162ae10b4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should fail to login with incorrect username and password",
+              "fullTitle": "Login Tests Should fail to login with incorrect username and password",
+              "timedOut": null,
+              "duration": 1405,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"users\").then(users => {\n  const invalidUser = users.invalidUser;\n  cy.get('#loginusername').clear().type(invalidUser.username);\n  cy.get('#loginpassword').clear().type(invalidUser.password);\n  cy.get('[onclick=\"logIn()\"]').click();\n  cy.on(\"window:alert\", alertText => {\n    cy.log(`Alert text after failed login: ${alertText}`);\n    expect(alertText).to.contains(\"User does not exist.\");\n  });\n});",
+              "err": {},
+              "uuid": "2b11be8d-340f-476f-8b26-4d75b480cbc9",
+              "parentUUID": "5893a6ea-e80d-4961-a8d2-1f0162ae10b4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "89b2bfb5-5a92-46f9-bb44-5e7d88d2574c",
+            "2b11be8d-340f-476f-8b26-4d75b480cbc9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4593,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

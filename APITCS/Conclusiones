@@ -1,0 +1,20 @@
+# Conclusiones sobre las Pruebas de Login con Cypress
+
+## Observaciones Generales
+1. Funcionamiento Correcto del Login: La prueba de inicio de sesión con credenciales válidas se ejecutó correctamente, permitiendo la autenticación del usuario y mostrando el mensaje de bienvenida esperado.
+2. Manejo de Errores: Se observó que la aplicación muestra una alerta cuando el usuario o la contraseña son incorrectos. Cypress logró capturar y validar este comportamiento de manera adecuada.
+3. Tiempos de Respuesta: La aplicación responde dentro del tiempo esperado en la mayoría de los casos, aunque en algunas ejecuciones hubo ligeros retrasos en la carga de la interfaz después del login.
+4. Persistencia de Sesión: Se verificó que las cookies y el almacenamiento local son limpiados antes de cada prueba, evitando interferencias entre ejecuciones.
+
+## Opiniones
+- Cypress demostró ser una herramienta confiable y eficiente para automatizar pruebas de autenticación.
+- La integración con Mochawesome facilita la generación de reportes detallados, permitiendo un análisis claro de los resultados.
+- Se recomienda realizar pruebas adicionales con distintos navegadores para asegurar compatibilidad y detectar posibles inconsistencias.
+
+## Consideraciones a Tener en Cuenta
+- Manejo de Datos de Prueba: Es importante actualizar y proteger los datos de prueba en el archivo `users.json` para evitar exposición de credenciales sensibles.
+- Robustez de la Aplicación: Se podría mejorar el manejo de errores en la interfaz de usuario, proporcionando mensajes más detallados en caso de fallo en el login.
+- Automatización Adicional: Se recomienda agregar pruebas para verificar el cierre de sesión y el manejo de sesiones caducadas.
+- Escalabilidad: Si se agregan más pruebas, es recomendable estructurar mejor los casos de prueba y modularizar el código para facilitar su mantenimiento.
+
+
