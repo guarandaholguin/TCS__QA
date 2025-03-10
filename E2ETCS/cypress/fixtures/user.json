@@ -1,0 +1,18 @@
+{
+  "user1": {
+    "name": "Juan Perez",
+    "country": "Colombia",
+    "city": "Bogota",
+    "card": "1234567890123456",
+    "month": "12",
+    "year": "2025"
+  },
+  "user2": {
+    "name": "Maria Gomez",
+    "country": "Argentina",
+    "city": "Buenos Aires",
+    "card": "6543210987654321",
+    "month": "10",
+    "year": "2026"
+  }
+}
